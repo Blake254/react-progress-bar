@@ -1,22 +1,22 @@
 import React from "react";
 import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 
 const ProgressBarNew = () => {
-  var currentTime = 60;
-
-  const AddTime = () => {
-    currentTime += 10;
-    console.log(currentTime);
-
-    return currentTime;
-  };
+  const [counter, setCounter] = useState(0);
 
   return (
     <div>
       <div className="container">
-        <ProgressBar animated now={currentTime} label={`${currentTime}%`} />
-        <button onClick={AddTime}>Add</button>
+        <ProgressBar animated now={counter} label={`${counter}%`} />
+        <button
+          onClick={() => {
+            setCounter(counter + 10);
+          }}
+        >
+          Add
+        </button>
       </div>
     </div>
   );
