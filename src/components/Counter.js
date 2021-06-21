@@ -1,9 +1,17 @@
 import React from "react";
 
-const Counter = () => {
+const Counter = ({ timer }) => {
+  function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
+
+  const totalTime = millisToMinutesAndSeconds(timer);
+
   return (
     <div>
-      <p>10:00:00</p>
+      <p>{totalTime}</p>
     </div>
   );
 };

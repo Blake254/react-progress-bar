@@ -1,9 +1,11 @@
 import React from "react";
+import Counter from "./Counter";
+import { useState } from "react";
 
-const Balance = () => {
+const Balance = ({ counter }) => {
   return (
     <div>
-      <p>$10</p>
+      <p>{`$ ${counter}`}</p>
     </div>
   );
 };

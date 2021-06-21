@@ -3,20 +3,13 @@ import { ProgressBar } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 
-const ProgressBarNew = () => {
-  const [counter, setCounter] = useState(0);
-
+const ProgressBarNew = ({ counter }) => {
+  const value = counter;
+  console.log("Bar ", counter);
   return (
     <div>
       <div className="container">
         <ProgressBar animated now={counter} label={`${counter}%`} />
-        <button
-          onClick={() => {
-            setCounter(counter + 10);
-          }}
-        >
-          Add
-        </button>
       </div>
     </div>
   );
